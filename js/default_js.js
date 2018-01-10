@@ -36,6 +36,19 @@ InitScroll();
 
 // end redy function
 });
+// ---------------------------------------------------------
+// Animation Fade In Up
+// --------------------------------------------------------- 
+function InitAnimationPosts(){
+	"use strict";
+
+		jQuery(".over-portfolio-item").viewportChecker({
+			classToAdd: " animated fadeInUp",   //portfoliovisible
+			offset: 50    
+		}); 
+
+
+} 
 
  jQuery(window).load(function(){
 	"use strict";  	 
@@ -56,7 +69,7 @@ function InitPortfolioRows(){
 	"use strict";
 	
 	if(jQuery('.isotope').length){  
-			var windwidth = jQuery(window).width();
+			//var windwidth = jQuery(window).width();
 			/*
 					if(windwidth < 1600){
 						jQuery('.isotope').css('width', windwidth);
@@ -64,15 +77,14 @@ function InitPortfolioRows(){
 				*/
 				jQuery('.isotope').waitForImages(function() {
 				jQuery('.isotope').isotope({  
-				  itemSelector : '.portfolio-item' ,  
+				  itemSelector : '.portfolio-item', 
+				  resize: true, 
 				  masonry: {
 							 columnWidth: '.first-rows'
 					}				  
 				});
 			  });  
-                            jQuery(window).resize(function() {
-                                jQuery('.isotope').isotope('layout');
-                            });
+                     
 	}
 }  
 
@@ -114,18 +126,6 @@ function InitCounter(){
 			});
 	}
 }
-// ---------------------------------------------------------
-// Animation Fade In Up
-// --------------------------------------------------------- 
-function InitAnimationPosts(){
-	"use strict";
-	if(jQuery(".over-portfolio-item").length){
-		jQuery(".over-portfolio-item").viewportChecker({
-			classToAdd: " animated fadeInUp",   //portfoliovisible
-			offset: 50    
-		}); 
-	}
-} 
 
 // ---------------------------------------------------------
 // Animation Portfolio
